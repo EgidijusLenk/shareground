@@ -11,8 +11,8 @@ def metadata_tags(url):
     r = requests.get(url)
 
     website = BeautifulSoup(r.text, "lxml")
-    metatags= []
+    metatags= ""
     for metatag in website.find_all('meta', property=re.compile(r'og\:')):
-        metatags.append(str(metatag))  
+        metatags+=(str(metatag))  
         print(metatags)
     return metatags

@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- {{ metadata_tags | safe}} -->
+    {% for item in metadata_tags %}
+        {{ item | safe }}
+    {% endfor %}
     <title>Document</title>
 </head>
 <body>
-    <h1>enter link you want to shorten</h1>
-    <form method="post">
+    <h1>metatags up?</h1>
+    <!-- <form method="post">
         <input type="text" name="url" value="" placeholder="paste url here">
         <input type="submit">
-    </form>
-    <p>Result: <a href={{ result }}> {{ result }}</a></p>
-    <p>Path: {{ path }}</p>
+    </form> -->
+    <!-- <p>Result: <a href={{ result }}> {{ result }}</a></p> -->
+    <p>Path: {{ metadata_tags | safe}}</p>
 </body>
 </html>
